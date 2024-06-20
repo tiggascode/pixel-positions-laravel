@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/jobs', function () {
         return view('components.results', ['jobs' => auth()->user()->employer->jobs]);
     });
+    Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
 });
 Route::get('/search', SearchController::class)->name('search');

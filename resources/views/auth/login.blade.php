@@ -13,9 +13,10 @@
                 name="email"
                 placeholder="Email"
                 type="email"
+                value="{{old('email')}}"
             />
             @error('email')
-            <span class="text-danger">{{$message}}</span>
+            <span class="text-danger text-red-700">{{$message}}</span>
             @enderror
             <input
                 class="rounded-xl bg-white/10 border border-white/10 px-5 py-4 w-full"
@@ -23,7 +24,9 @@
                 placeholder="Password"
                 type="password"
             />
-
+            @error('password')
+            <span class="text-danger text-red-700">{{$message}}</span>
+            @enderror
 
             <button class="bg-blue-800 rounded py-2 px-6 font-bold">
                 Login
